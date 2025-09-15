@@ -1,6 +1,6 @@
 "use client";
 
-import { Button, buttonVariants } from "@/components/ui/button";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCartStore } from "@/store/cart-store";
 import { checkoutAction } from "./checkout-action";

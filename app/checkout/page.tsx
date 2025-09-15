@@ -1,9 +1,10 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { Button, buttonVariants } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { useCartStore } from "@/store/cart-store";
 import { checkoutAction } from "./checkout-action";
+import Link from "next/link";
 
 export default function CheckoutPage() {
   const { items, removeItem, addItem } = useCartStore();
@@ -14,8 +15,10 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="container mx-auto px-4 py-8 text-center">
-        <h1 className="text-3xl font-bold mb-4">Your Cart is Empty</h1>
+      <div className="container mx-auto px-4 py-8 text-center h-[calc(100vh-30vh)]">
+        <h1 className="text-3xl font-bold mb-4">Your Cart is Empty.</h1>
+        <Link href="/products"><Button variant="secondary"  className="text-3xl font-bold mb-4 cursor-pointer py-2">Order Now ↑</Button></Link>
+        
       </div>
     );
   }
